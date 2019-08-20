@@ -19,13 +19,12 @@
 class Anagram
   attr_accessor :word_to_analyze
 
-  def initialize(word_to_analyze)
-    @word_to_analyze = word_to_analyze
+  def initialize(words)
+    @words = words
   end
 
-  def match(find_anagram_in_this_string)
-    
-    find_anagram_in_this_string.find_all do |word|
+  def match(string_words)
+    string_words.find_all do |word|
       if word.split("").sort == self.word_to_analyze.split("").sort
         word
       end
